@@ -1,0 +1,15 @@
+C:\Users\ADMIN\source\repos\TrelloA\TrelloA\bin\Debug\TrelloA.exe.config
+C:\Users\ADMIN\source\repos\TrelloA\TrelloA\bin\Debug\TrelloA.exe
+C:\Users\ADMIN\source\repos\TrelloA\TrelloA\bin\Debug\TrelloA.pdb
+C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\TrelloA.csprojAssemblyReference.cache
+C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\MainWindow.g.cs
+C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\App.g.cs
+C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\TrelloA_MarkupCompile.cache
+C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\TrelloA_MarkupCompile.lref
+C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\MainWindow.baml
+C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\TrelloA.g.resources
+C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\TrelloA.Properties.Resources.resources
+C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\TrelloA.csproj.GenerateResource.cache
+C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\TrelloA.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\TrelloA.exe
+C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\TrelloA.pdb

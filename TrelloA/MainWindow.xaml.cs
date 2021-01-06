@@ -24,5 +24,10 @@ namespace TrelloA
         {
             InitializeComponent();
         }
+
+        private void CreateUser(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

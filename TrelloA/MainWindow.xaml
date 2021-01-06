@@ -6,7 +6,40 @@
         xmlns:local="clr-namespace:TrelloA"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition>
+                </ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Expander Grid.Column="0" Grid.Row="0" Header="управление пользователями">
+                <StackPanel>
+                    <Button Background="LightSeaGreen" Foreground="White" FontWeight="Bold" FontSize="15" Height="25" Click="CreateUser" >создать</Button>
+                    <Button>изменить</Button>
+                    <Button>удалить</Button>
+                </StackPanel> 
+            </Expander>
+            <Expander Grid.Column="1" Grid.Row="0" Header="управление задачами">
+                <StackPanel>
+                    <Button>создать</Button>
+                    <Button>изменить</Button>
+                    <Button>удалить</Button>
+                    <Button>добавить пользователя</Button>
+                    <Button>удалить пользователя</Button>
+                </StackPanel>
+            </Expander>
+            <Expander Grid.Column="2" Grid.Row="0" Header="управление маркерами">
+                <StackPanel>
+                    <Button>добавить к задаче</Button>
+                    <Button>изменить</Button>
+                    <Button>удалить</Button>
+                </StackPanel>
+            </Expander>
+        </Grid>
+    </StackPanel>
 </Window>

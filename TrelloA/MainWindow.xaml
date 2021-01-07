@@ -16,11 +16,13 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Expander Grid.Column="0" Grid.Row="0" Header="управление пользователями">
                 <StackPanel>
-                    <Button Background="LightSeaGreen" Foreground="White" FontWeight="Bold" FontSize="15" Height="25" Click="CreateUser" >создать</Button>
-                    <Button>изменить</Button>
+                    <Button Background="LightSeaGreen" Foreground="White" FontWeight="Bold" FontSize="15" Height="25" Click="CreateUserInDB_Click" >создать</Button>
+                    <Button Background="LightSeaGreen" Foreground="White" FontWeight="Bold" FontSize="15" Height="25" Click="ChangeUser_Click">изменить</Button>
+                    <Button Background="LightSeaGreen" Foreground="White" FontWeight="Bold" FontSize="15" Height="25" Click="GetUserList_Click">показать</Button>
                     <Button>удалить</Button>
                 </StackPanel> 
             </Expander>
@@ -40,6 +42,8 @@
                     <Button>удалить</Button>
                 </StackPanel>
             </Expander>
+            <DataGrid Grid.Row="1" HorizontalAlignment="Left"  Height="250" VerticalAlignment="Top" Width="auto" AutoGenerateColumns="True" Name="usersGrid">
+            </DataGrid>
         </Grid>
     </StackPanel>
 </Window>

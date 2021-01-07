@@ -13,3 +13,7 @@ C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\TrelloA.csproj.GenerateRes
 C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\TrelloA.csproj.CoreCompileInputs.cache
 C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\TrelloA.exe
 C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\TrelloA.pdb
+C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\user management\ChangeUser.g.cs
+C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\user management\NewUser.g.cs
+C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\user management\ChangeUser.baml
+C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\user management\NewUser.baml

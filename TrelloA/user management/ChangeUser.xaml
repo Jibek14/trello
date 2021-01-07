@@ -1,0 +1,17 @@
+﻿<Window x:Class="TrelloA.ChangeUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TrelloA"
+        mc:Ignorable="d"
+        Title="ChangeUser" Height="450" Width="800">
+    <StackPanel>
+        <Label Height="25" Background="LightGoldenrodYellow" Foreground="DarkGoldenrod" FontWeight="DemiBold">введите id/имя/фамилию/ник</Label>
+        <TextBox x:Name="findInfoTB"></TextBox>
+        <Button Height="25" Background="PapayaWhip" Click="FindByUserEnterData_Click">поиск</Button>
+        <DataGrid Grid.Row="1" HorizontalAlignment="Left"  Height="250" VerticalAlignment="Top" Width="auto" AutoGenerateColumns="True" Name="usersGrid">
+        </DataGrid>
+        <Button Height="25" Background="PapayaWhip" Click="SaveChanges_Click">применить изменения</Button>
+    </StackPanel>
+</Window>

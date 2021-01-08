@@ -35,15 +35,13 @@ namespace TrelloA
             NewUser newUser = new NewUser();
             newUser.Show();
         }
-
         private void ChangeUser_Click(object sender, RoutedEventArgs e)
         {
             ChangeUser changeUser = new ChangeUser();
             changeUser.Show();
         }
-
         private void GetUserList_Click(object sender, RoutedEventArgs e)
-        { 
+        {   
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             string cmd = "SELECT id,firstName,lastName,UserName FROM [user]";
@@ -51,12 +49,18 @@ namespace TrelloA
             createCommand.ExecuteNonQuery();
             SqlDataAdapter dataAdapter = new SqlDataAdapter(createCommand);
             DataTable dt = new DataTable("user");
-            dataAdapter.Fill(dt);
+           dt.Clear();  dataAdapter.Fill(dt);
             usersGrid.ItemsSource = dt.DefaultView;
             connection.Close();  usersGrid.Columns[0].IsReadOnly = true;
             usersGrid.Columns[1].IsReadOnly = true;
             usersGrid.Columns[2].IsReadOnly = true;
             usersGrid.Columns[3].IsReadOnly = true;
+         
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

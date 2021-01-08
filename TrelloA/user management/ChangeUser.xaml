@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="ChangeUser" Height="450" Width="800">
     <StackPanel>
-        <Label Height="25" Background="LightGoldenrodYellow" Foreground="DarkGoldenrod" FontWeight="DemiBold">введите id/имя/фамилию/ник</Label>
+        <Label Height="25" Background="LightGoldenrodYellow" Foreground="DarkGoldenrod" FontWeight="DemiBold">введите данные для поиска (id/username/firstname/lastname)</Label>
         <TextBox x:Name="findInfoTB"></TextBox>
-        <Button Height="25" Background="PapayaWhip" Click="FindByUserEnterData_Click">поиск</Button>
+        <Button Height="25" Background="PapayaWhip" Click="SearchByUserEnterData_Click">вывод пользователей</Button>
         <DataGrid Grid.Row="1" HorizontalAlignment="Left"  Height="250" VerticalAlignment="Top" Width="auto" AutoGenerateColumns="True" Name="usersGrid">
         </DataGrid>
         <Button Height="25" Background="PapayaWhip" Click="SaveChanges_Click">применить изменения</Button>

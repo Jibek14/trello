@@ -22,45 +22,46 @@ namespace TrelloA
     /// </summary>
     public partial class ChangeUser : Window
     {
-        string connectionString; SqlConnection connection;
-        SqlDataAdapter dataAdapter;bool isGridFull = false;
+        public DataSet dataSet = new DataSet();
+        string connectionString; string sqlExpression;bool dataIsShowed = false;
         public ChangeUser()
         {
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
    
         }
-        private void MainConnect(string sql)
-        {
-
+        private void SearchByUserEnterData_Click(object sender, RoutedEventArgs e)
+        {  sqlExpression = $"SELECT * FROM [User] WHERE FirstName LIKE '%{findInfoTB.Text}%' or LastName LIKE '%{findInfoTB.Text}%' or id LIKE '%{findInfoTB.Text}%' or UserName LIKE '%{findInfoTB.Text}%'";         
+           dataSet.Clear();
+            if (!String.IsNullOrWhiteSpace(findInfoTB.Text))
+            {   
+                MainConnection(sqlExpression,"[User]");dataIsShowed = true;
+            }else
+            {
+                MessageBox.Show("введите данные для поиска");
+            }
         }
-        private void FindByUserEnterData_Click(object sender, RoutedEventArgs e)
-        { 
-            string cmd = $"SELECT * FROM [User] WHERE FirstName LIKE '%{findInfoTB.Text}%' or LastName LIKE '%{findInfoTB.Text}%' or id LIKE '%{findInfoTB.Text}%' or UserName LIKE '%{findInfoTB.Text}%'";
-            connection = new SqlConnection(connectionString);
-            connection.Open();
-            SqlCommand createCommand = new SqlCommand(cmd, connection);
-            createCommand.ExecuteNonQuery();
-            dataAdapter = new SqlDataAdapter(createCommand);
-            DataTable dt = new DataTable("user");
-            dataAdapter.Fill(dt);
-            usersGrid.ItemsSource = dt.DefaultView;           
-            connection.Close();
-            usersGrid.Columns[0].IsReadOnly = true;
-            isGridFull = true;
+        private void MainConnection(string sqlQuery, string tableName)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(sqlQuery, connection);
+                adapter.Fill(dataSet, tableName);
+                usersGrid.ItemsSource = new DataView(dataSet.Tables[tableName]);
+                //нельзя изменить id->[0] и password->[4]
+                usersGrid.Columns[0].IsReadOnly = true; 
+                usersGrid.Columns[4].IsReadOnly = true;
+            }
         }
         private void SaveChanges_Click(object sender, RoutedEventArgs e)
         {
-            if (isGridFull)
+           
+            if (dataIsShowed)
             {
-                connection = new SqlConnection(connectionString);
-                connection.Open();
-                string sql = $"Update [User] set firstName='{usersGrid.Columns[1]}',lastName='{usersGrid.Columns[2]}', userName ='{usersGrid.Columns[3]}' where id = {usersGrid.Columns[0]} ";
-                using(SqlCommand cmd=new SqlCommand(sql, this.connection))
-                {
-                    cmd.ExecuteNonQuery(); isGridFull = false;
-                    MessageBox.Show("изменения внесены"); 
-                }
+            SqlDataAdapter adapter = new SqlDataAdapter(sqlExpression, connectionString);
+            SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(adapter);
+            adapter.Update(dataSet.Tables["[user]"]);MessageBox.Show("готово");
             }
             else
             {

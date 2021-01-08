@@ -23,7 +23,7 @@
                     <Button Background="LightSeaGreen" Foreground="White" FontWeight="Bold" FontSize="15" Height="25" Click="CreateUserInDB_Click" >создать</Button>
                     <Button Background="LightSeaGreen" Foreground="White" FontWeight="Bold" FontSize="15" Height="25" Click="ChangeUser_Click">изменить</Button>
                     <Button Background="LightSeaGreen" Foreground="White" FontWeight="Bold" FontSize="15" Height="25" Click="GetUserList_Click">показать</Button>
-                    <Button>удалить</Button>
+                    <Button Background="LightSeaGreen" Foreground="White" FontWeight="Bold" FontSize="15" Height="25" Click="Delete_Click">удалить</Button>
                 </StackPanel> 
             </Expander>
             <Expander Grid.Column="1" Grid.Row="0" Header="управление задачами">

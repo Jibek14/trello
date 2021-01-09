@@ -35,8 +35,9 @@ namespace TrelloA
            dataSet.Clear();
             if (!String.IsNullOrWhiteSpace(findInfoTB.Text))
             {   
-                MainConnection(sqlExpression,"[User]");dataIsShowed = true;
-            }else
+                MainConnection(sqlExpression,"[User]");dataIsShowed = true; usersGrid.CanUserDeleteRows = false;
+            }
+            else
             {
                 MessageBox.Show("введите данные для поиска");
             }
@@ -56,7 +57,6 @@ namespace TrelloA
         }
         private void SaveChanges_Click(object sender, RoutedEventArgs e)
         {
-           
             if (dataIsShowed)
             {
             SqlDataAdapter adapter = new SqlDataAdapter(sqlExpression, connectionString);

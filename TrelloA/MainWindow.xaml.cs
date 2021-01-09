@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TrelloA.user_management;
 
 namespace TrelloA
 {
@@ -55,12 +56,14 @@ namespace TrelloA
             usersGrid.Columns[1].IsReadOnly = true;
             usersGrid.Columns[2].IsReadOnly = true;
             usersGrid.Columns[3].IsReadOnly = true;
-         
+            usersGrid.CanUserDeleteRows = false;
+
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-
+            DeleteUser deleteUser = new DeleteUser();
+            deleteUser.Show();
         }
     }
 }

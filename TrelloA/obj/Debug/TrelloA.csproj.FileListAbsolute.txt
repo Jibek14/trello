@@ -17,3 +17,5 @@ C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\user management\ChangeUser
 C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\user management\NewUser.g.cs
 C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\user management\ChangeUser.baml
 C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\user management\NewUser.baml
+C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\user management\DeleteUser.g.cs
+C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\user management\DeleteUser.baml

@@ -7,13 +7,12 @@
         mc:Ignorable="d"
         Title="DeleteUser" Height="450" Width="800" Loaded="Window_Loaded">
     <StackPanel>
-        <Label Height="25" Background="LightGoldenrodYellow" Foreground="DarkGoldenrod" FontWeight="DemiBold">введите данные пользователя,которого хотите удалить (id/username/firstname/lastname)</Label>
+        <Label Height="25" Background="LightGoldenrodYellow" Foreground="DarkGoldenrod" FontWeight="DemiBold">введите данные для поиска (id/username/firstname/lastname)</Label>
         <TextBox x:Name="findInfoTB"></TextBox>
-        <Button Height="25" Background="PapayaWhip" Click="SearchByUserEnterData_Click">вывести пользователя(-ей)</Button>
+        <Button Height="25" Background="PapayaWhip" Click="SearchByUserEnterData_Click">поиск пользователя(-ей)</Button>
         <Grid>
             <DataGrid x:Name="gridPosts" ItemsSource="{Binding dataTable}">
                 <DataGrid.Columns>
-                    <!-- ... -->
                     <DataGridTemplateColumn Header="Delete">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>

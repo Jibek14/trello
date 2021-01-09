@@ -51,7 +51,23 @@ namespace TrelloA.user_management
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             DataRowView row = (DataRowView)gridPosts.SelectedItem;
-            dt.Rows.Remove(row.Row);
+            string id = row.Row["Id"].ToString();
+            string sqlDelete = $"DELETE FROM [USER] WHERE Id ={id};";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(sqlDelete, connection);
+                try
+                {
+                    command.ExecuteNonQuery(); dt.Rows.Remove(row.Row); 
+                }
+                catch (SqlException ex)
+                {
+                    Exception error = new Exception("что-то пошло не так...Данные не удалились!", ex);
+                    throw error;
+                }
+            }
+                          
         }
         private void MainConnection(string sqlQuery, string tableName)
         {
@@ -69,11 +85,7 @@ namespace TrelloA.user_management
             dataSet.Clear();
             if (!String.IsNullOrWhiteSpace(findInfoTB.Text))
             {
-                MainConnection(sqlExpression, "[User]"); 
-                //нельзя изменить id->[0] и password->[4]
-                //usersGrid.Columns[0].IsReadOnly = true;
-                //usersGrid.Columns[4].IsReadOnly = true;
-               
+                MainConnection(sqlExpression, "[User]");
             }
             else
             {

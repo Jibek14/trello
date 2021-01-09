@@ -1,0 +1,56 @@
+﻿<Window x:Class="TrelloA.tasks_management.NewTask"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TrelloA.tasks_management"
+        mc:Ignorable="d"
+        Title="NewTask" Height="450" Width="650">
+    <StackPanel Background="Bisque" Height="auto">
+        <Label Height="25" Background="Cornsilk" HorizontalContentAlignment="Center">задача</Label>
+        <Grid Background="LightBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="150"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Background="LightCoral">название</Label>
+            <Label Grid.Column="0" Grid.Row="1" Background="Ivory">описание</Label>
+            <TextBox x:Name="titleTB" Grid.Column="1" Grid.Row="0"></TextBox>
+            <TextBox x:Name="descriptionTB" Grid.Column="1" Grid.Row="1"></TextBox>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Background="LightCoral">важность</Label>
+            <Label Grid.Column="1"  Grid.Row="0" Background="Red">срочно,важно</Label>
+            <Label Grid.Column="2" Grid.Row="0" Background="LimeGreen">не срочно,важно</Label>
+            <Label Grid.Column="3" Grid.Row="0" Background="Yellow">срочно,не важно</Label>
+            <Label Grid.Column="4" Grid.Row="0" Background="DodgerBlue">не срочно/не важно</Label>
+            <RadioButton  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center"></RadioButton>
+            <RadioButton Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"></RadioButton>
+            <RadioButton Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center"></RadioButton>
+            <RadioButton Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center"></RadioButton>
+            <Label Grid.Column="0" Grid.Row="2" Background="Ivory" Grid.RowSpan="3" Padding="40,15,0,0">статус</Label>
+            <Label Grid.Row="2" Grid.Column="1">не выполнено</Label>
+            <Label Grid.Row="3" Grid.Column="1">выполнено</Label>
+            <RadioButton Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center"></RadioButton>
+            <RadioButton Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center"></RadioButton>
+        </Grid>
+        <Button Height="25" Background="Cornsilk">создать</Button>
+    </StackPanel>
+</Window>

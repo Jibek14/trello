@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:TrelloA"
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="450">
-    <StackPanel Background="Bisque">
-        <Label Height="25" Background="Cornsilk">ПОЛЬЗОВАТЕЛЬ</Label>
+    <StackPanel Background="Bisque" Height="auto">
+        <Label Height="25" Background="Cornsilk" HorizontalContentAlignment="Center">ПОЛЬЗОВАТЕЛЬ</Label>
         <Grid Background="LightBlue">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100"></ColumnDefinition>

@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TrelloA.tasks_management;
 using TrelloA.user_management;
 
 namespace TrelloA
@@ -30,7 +31,6 @@ namespace TrelloA
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         }
-
         private void CreateUserInDB_Click(object sender, RoutedEventArgs e)
         {
             NewUser newUser = new NewUser();
@@ -59,11 +59,21 @@ namespace TrelloA
             usersGrid.CanUserDeleteRows = false;
 
         }
-
-        private void Delete_Click(object sender, RoutedEventArgs e)
+        private void DeleteUser_Click(object sender, RoutedEventArgs e)
         {
             DeleteUser deleteUser = new DeleteUser();
             deleteUser.Show();
+        }
+        private void CreateTask_Click(object sender, RoutedEventArgs e)
+        {
+           NewTask newTask = new NewTask();
+            newTask.Show();
+        }
+
+        private void GetTasksList_Click(object sender, RoutedEventArgs e)
+        {
+            UsersList usersList = new UsersList();
+            usersList.Show();
         }
     }
 }

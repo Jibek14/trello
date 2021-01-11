@@ -35,22 +35,26 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Label Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Background="LightCoral">важность</Label>
             <Label Grid.Column="1"  Grid.Row="0" Background="Red">срочно,важно</Label>
             <Label Grid.Column="2" Grid.Row="0" Background="LimeGreen">не срочно,важно</Label>
             <Label Grid.Column="3" Grid.Row="0" Background="Yellow">срочно,не важно</Label>
             <Label Grid.Column="4" Grid.Row="0" Background="DodgerBlue">не срочно/не важно</Label>
-            <RadioButton  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center"></RadioButton>
-            <RadioButton Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"></RadioButton>
-            <RadioButton Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center"></RadioButton>
-            <RadioButton Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center"></RadioButton>
+            <RadioButton x:Name="red" GroupName="markerRBtn" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center"></RadioButton>
+            <RadioButton x:Name="green" GroupName="markerRBtn" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"></RadioButton>
+            <RadioButton x:Name="yellow" GroupName="markerRBtn" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center"></RadioButton>
+            <RadioButton x:Name="blue" GroupName="markerRBtn" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center"></RadioButton>
             <Label Grid.Column="0" Grid.Row="2" Background="Ivory" Grid.RowSpan="3" Padding="40,15,0,0">статус</Label>
             <Label Grid.Row="2" Grid.Column="1">не выполнено</Label>
             <Label Grid.Row="3" Grid.Column="1">выполнено</Label>
-            <RadioButton Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center"></RadioButton>
-            <RadioButton Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center"></RadioButton>
+            <RadioButton x:Name="notDone" GroupName="statusRB" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center"></RadioButton>
+            <RadioButton x:Name="done" GroupName="statusRB" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center"></RadioButton>
+                  <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" Background="White">Введите Ваш идентификационный номер,чтобы задача закрепилась за Вами</Label>
+        <TextBox x:Name="creatorIdTB" Grid.Row="4" Grid.Column="4" Background="Honeydew"></TextBox>
         </Grid>
-        <Button Height="25" Background="Cornsilk">создать</Button>
+  
+        <Button Height="25" Background="Cornsilk" Click="CreateTask_Click">создать</Button>
     </StackPanel>
 </Window>

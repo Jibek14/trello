@@ -57,7 +57,6 @@ namespace TrelloA
             usersGrid.Columns[2].IsReadOnly = true;
             usersGrid.Columns[3].IsReadOnly = true;
             usersGrid.CanUserDeleteRows = false;
-
         }
         private void DeleteUser_Click(object sender, RoutedEventArgs e)
         {

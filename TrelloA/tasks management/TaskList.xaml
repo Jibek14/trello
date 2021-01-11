@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="UsersList" Height="450" Width="800" Loaded="Window_Loaded">
     <StackPanel>
-        <TextBox Height="300" Margin="0,50,0,0" x:Name="usersListTB"></TextBox>
+        <Label Height="30" Foreground="BlueViolet" FontSize="20" HorizontalAlignment="Center">список задач</Label>
+        <TextBox VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Height="350" x:Name="usersListTB"></TextBox>
     </StackPanel>
 </Window>

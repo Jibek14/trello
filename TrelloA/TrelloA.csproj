@@ -64,8 +64,8 @@
       <DependentUpon>NewTask.xaml</DependentUpon>
     </Compile>
     <Compile Include="tasks management\Task.cs" />
-    <Compile Include="tasks management\UsersList.xaml.cs">
-      <DependentUpon>UsersList.xaml</DependentUpon>
+    <Compile Include="tasks management\TaskList.xaml.cs">
+      <DependentUpon>TaskList.xaml</DependentUpon>
     </Compile>
     <Compile Include="user management\ChangeUser.xaml.cs">
       <DependentUpon>ChangeUser.xaml</DependentUpon>
@@ -80,7 +80,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="tasks management\UsersList.xaml">
+    <Page Include="tasks management\TaskList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -19,9 +19,20 @@ namespace TrelloA.tasks_management
         {
             InitializeComponent();
         }
+        private void InsertIntoTaskMarker(int markerId,int taskId)
+        {
+  string sqlExpTaskMarker = $"INSERT INTO taskMarker (idMarker,idTask) VALUES({markerId},{taskId});";
+          using(SqlConnection connection=new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(sqlExpTaskMarker, connection);
+                command.ExecuteNonQuery();
+            }
+        }
         private void CreateTask_Click(object sender, RoutedEventArgs e)
-        { int userMarker;bool userInDB = false;
-           List<int> userId = new List<int>();
+        {int taskId=0;
+            bool userInDB = false;
+            List<int> userId = new List<int>();
             string sqlExpression = "Select * FROM [User]";
             using (SqlConnection connection=new SqlConnection(connectionString))
             {
@@ -36,24 +47,7 @@ namespace TrelloA.tasks_management
                     {
                         userInDB = true; 
                     }
-                }
-            }
-           
-            if (red.IsChecked == true)
-            {
-                userMarker = 1;
-            }
-            else if (green.IsChecked == true)
-            {
-                userMarker = 2;
-            }
-            else if (yellow.IsChecked == true)
-            {
-                userMarker = 3;
-            }
-            else
-            {
-                userMarker = 4;
+                    }
             }
             int userStatus;
             if (notDone.IsChecked == true)
@@ -65,20 +59,35 @@ namespace TrelloA.tasks_management
                 userStatus = 1;
             }
             if (userInDB)
-            {  DataContext db = new DataContext(connectionString);
+            {   DataContext db = new DataContext(connectionString);
                 Task userTask = new Task
                 {
                     Title = titleTB.Text,
-                    Description = descriptionTB.Text,
-                    MarkerId = userMarker,
+                    Description = descriptionTB.Text,                   
                     StatusId = userStatus,
                     CreatorUserId = Convert.ToInt32(creatorIdTB.Text),
-                };             
+                };     
                 db.GetTable<Task>().InsertOnSubmit(userTask);
                 db.SubmitChanges();
-                MessageBox.Show("данные сохранены");
-                red.IsChecked = false; green.IsChecked = false;
-                yellow.IsChecked = false; blue.IsChecked = false;
+                taskId = userTask.Id;
+                MessageBox.Show($"данные сохранены\nномер задачи{taskId}");
+                if (red.IsChecked == true)
+                {
+                    InsertIntoTaskMarker(1, taskId);
+                }
+                if (green.IsChecked == true)
+                {
+                    InsertIntoTaskMarker(2, taskId);
+                }
+                if (yellow.IsChecked == true)
+                {
+                    InsertIntoTaskMarker(3, taskId);
+                }
+                if (blue.IsChecked == true)
+                {
+                    InsertIntoTaskMarker(4, taskId);
+                }
+                MessageBox.Show("markerTask ready too!");
             }
             else
             {

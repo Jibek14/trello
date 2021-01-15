@@ -25,3 +25,5 @@ C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\tasks management\TaskList.
 C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\tasks management\TaskList.baml
 C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\tasks management\ChangeTask.g.cs
 C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\tasks management\ChangeTask.baml
+C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\stProcedures\MarkersById.g.cs
+C:\Users\ADMIN\source\repos\TrelloA\TrelloA\obj\Debug\stProcedures\MarkersById.baml

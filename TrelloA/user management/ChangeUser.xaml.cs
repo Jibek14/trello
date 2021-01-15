@@ -28,10 +28,10 @@ namespace TrelloA
         {
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-   
         }
         private void SearchByUserEnterData_Click(object sender, RoutedEventArgs e)
-        {  sqlExpression = $"SELECT * FROM [User] WHERE FirstName LIKE '%{findInfoTB.Text}%' or LastName LIKE '%{findInfoTB.Text}%' or id LIKE '%{findInfoTB.Text}%' or UserName LIKE '%{findInfoTB.Text}%'";         
+        {  sqlExpression = $"SELECT * FROM [User] WHERE FirstName LIKE '%{findInfoTB.Text}%'" +
+                $"or LastName LIKE '%{findInfoTB.Text}%' or id LIKE '%{findInfoTB.Text}%' or UserName LIKE '%{findInfoTB.Text}%'";         
            dataSet.Clear();
             if (!String.IsNullOrWhiteSpace(findInfoTB.Text))
             {   
@@ -61,7 +61,7 @@ namespace TrelloA
             {
             SqlDataAdapter adapter = new SqlDataAdapter(sqlExpression, connectionString);
             SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(adapter);
-            adapter.Update(dataSet.Tables["[user]"]);MessageBox.Show("готово");
+            adapter.Update(dataSet.Tables["[user]"]);MessageBox.Show($"готово{usersGrid.Columns[0]}");
             }
             else
             {

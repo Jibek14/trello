@@ -15,8 +15,6 @@ namespace TrelloA.tasks_management
             public string Title { get; set; }
             [Column(Name ="Definition")]
             public string Description { get; set; }
-            [Column(Name ="MarkerId")]
-            public int MarkerId { get; set; }
             [Column(Name ="StatusId")]
             public int StatusId { get; set; }
           [Column(Name ="CreatorUserId",CanBeNull =false)]

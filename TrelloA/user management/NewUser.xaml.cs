@@ -24,11 +24,10 @@ namespace TrelloA
         {
             InitializeComponent();
         }
-
         private void SaveUserDB(object sender, RoutedEventArgs e)
         {
             string connectionString= @"Data Source=.\SQLEXPRESS;Initial Catalog=trello;Integrated Security=True";
-            string sqlExpression = $"INSERT INTO [User] VALUES('{nameTB.Text}','{lastNameTB.Text}','{nikTB.Text}','{passwordTB.Text}')";
+            string sqlExpression = $"INSERT INTO [User] (firstname,lastname,username,password) VALUES('{nameTB.Text}','{lastNameTB.Text}','{nikTB.Text}','{passwordTB.Text}')";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();

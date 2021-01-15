@@ -1,0 +1,15 @@
+﻿<Window x:Class="TrelloA.stProcedures.MarkersById"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TrelloA.stProcedures"
+        mc:Ignorable="d"
+        Title="MarkersById" Height="450" Width="800">
+    <StackPanel>
+        <Label>введите id задачи</Label>
+        <TextBox x:Name="taskId"></TextBox>
+        <Button Click="GetMarkersListOfTaskById_Click">вывести</Button>
+        <TextBlock Width="600" Height="350" x:Name="markersListTB"></TextBlock>
+    </StackPanel>
+</Window>

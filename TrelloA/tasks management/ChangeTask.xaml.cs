@@ -40,7 +40,6 @@ namespace TrelloA.tasks_management
             { Id = taskId,
                 Title = titleTB.Text,
                 Description = descriptionTB.Text,
-                MarkerId = markerId,
                 StatusId = userStatus,
                 CreatorUserId = creatorUserId
             };
@@ -68,25 +67,25 @@ namespace TrelloA.tasks_management
                     titleTB.Text = userTask.Title;
                     descriptionTB.Text = userTask.Description;
                     creatorUserId = userTask.CreatorUserId;
-                    if (userTask.MarkerId == 1)
-                    {
-                        markerId = 1;
-                        red.IsChecked = true;
-                    }
-                    else if (userTask.MarkerId == 2)
-                    {
-                        markerId = 2;
-                          green.IsChecked = true;
-                    }
-                    else if (userTask.MarkerId == 3)
-                    {
-                        markerId = 3;
-                          yellow.IsChecked = true;
-                    }
-                    else
-                    {
-                        blue.IsChecked = true;
-                    }
+                    //if (userTask.MarkerId == 1)
+                    //{
+                    //    markerId = 1;
+                    //    red.IsChecked = true;
+                    //}
+                    //else if (userTask.MarkerId == 2)
+                    //{
+                    //    markerId = 2;
+                    //      green.IsChecked = true;
+                    //}
+                    //else if (userTask.MarkerId == 3)
+                    //{
+                    //    markerId = 3;
+                    //      yellow.IsChecked = true;
+                    //}
+                    //else
+                    //{
+                    //    blue.IsChecked = true;
+                    //}
                     if (userTask.StatusId == 1)
                     {
                         done.IsChecked = true;  userStatus = 1;

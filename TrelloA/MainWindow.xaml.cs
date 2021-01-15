@@ -7,7 +7,7 @@ using System.Linq;
 using System.Windows;
 using TrelloA.tasks_management;
 using TrelloA.user_management;
-
+using TrelloA.stProcedures;
 namespace TrelloA
 {
     /// <summary>
@@ -40,9 +40,11 @@ namespace TrelloA
             createCommand.ExecuteNonQuery();
             SqlDataAdapter dataAdapter = new SqlDataAdapter(createCommand);
             DataTable dt = new DataTable("user");
-           dt.Clear();  dataAdapter.Fill(dt);
+           dt.Clear();
+            dataAdapter.Fill(dt);
             usersGrid.ItemsSource = dt.DefaultView;
-            connection.Close();  usersGrid.Columns[0].IsReadOnly = true;
+            connection.Close();  
+            usersGrid.Columns[0].IsReadOnly = true;
             usersGrid.Columns[1].IsReadOnly = true;
             usersGrid.Columns[2].IsReadOnly = true;
             usersGrid.Columns[3].IsReadOnly = true;
@@ -72,7 +74,8 @@ namespace TrelloA
 
         private void GetMarkersListOfTask_Click(object sender, RoutedEventArgs e)
         {
-
+            MarkersById markersById = new MarkersById();
+            markersById.Show();
         }
     }
 }

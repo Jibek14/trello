@@ -26,21 +26,26 @@
                     <Button Background="LightSeaGreen" Foreground="White" FontWeight="Bold" FontSize="15" Height="25" Click="DeleteUser_Click">удалить</Button>
                 </StackPanel> 
             </Expander>
-            <Expander Grid.Column="1" Grid.Row="0" Header="управление задачами">
-                <StackPanel>
-                    <Button Foreground="White" FontWeight="Bold" FontSize="15" Height="25" Background="DarkSalmon" Click="CreateTask_Click">создать</Button>
-                    <Button>изменить</Button>
+            <Expander Grid.Column="1" Grid.Row="0" Header="управление задачами(маркерами)">
+                <StackPanel Width="180" Margin="-40,0,0,0">
+                    <Button Foreground="White" FontWeight="Bold" FontSize="15" Height="25" Background="LightSeaGreen" Click="CreateTask_Click">создать</Button>
+                    <Button  Foreground="White" FontWeight="Bold" FontSize="15" Height="25" Background="LightSeaGreen" Click="ChangeTask_Click">изменить</Button>
                     <Button>удалить</Button>
-                    <Button>добавить пользователя</Button>
-                    <Button>удалить пользователя</Button>
-                    <Button Foreground="White" FontWeight="Bold" FontSize="15" Height="25" Background="DarkSalmon" Click="GetTasksList_Click">вывести</Button>
+                    <Button Foreground="White" FontWeight="Bold" FontSize="15" Height="25" Background="LightSeaGreen" Click="GetTasksList_Click">вывести</Button>
                 </StackPanel>
             </Expander>
-            <Expander Grid.Column="2" Grid.Row="0" Header="управление маркерами">
-                <StackPanel>
-                    <Button>добавить к задаче</Button>
-                    <Button>изменить</Button>
-                    <Button>удалить</Button>
+            <Expander Margin="-30,0,0,0" Grid.Column="2" Grid.Row="0" Header="быстрый просмотр">
+                <StackPanel Width="240" Margin="-20,0,0,0">
+                    <Button Click="GetMarkersListOfTask_Click">получение списка маркеров задачи</Button>
+                    <Button>получение списка задач заданного статуса</Button>
+                    <Button>
+                        <TextBlock>получение истории изменения<LineBreak/>исполнителей по задачи</TextBlock> </Button>
+                    <Button>
+                        <TextBlock>получение списка задач<LineBreak/> выполненных пользователем</TextBlock> </Button>
+                    <Button>
+                        <TextBlock>получение списка задач,<LineBreak/> 
+                        соответствующих переданному статусу,<LineBreak/> из которых пользователь был исключен</TextBlock> 
+                    </Button>
                 </StackPanel>
             </Expander>
             <DataGrid Grid.Row="1" HorizontalAlignment="Left"  Height="250" VerticalAlignment="Top" Width="auto" AutoGenerateColumns="True" Name="usersGrid">

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\ADMIN\source\repos\TrelloA\TrelloA\App.xaml
-6-609373076
+7-137137548
 
-12-1655866781
+131327360405
 16-1551465122
-tasks management\NewTask.xaml;tasks management\TaskList.xaml;user management\ChangeUser.xaml;MainWindow.xaml;user management\DeleteUser.xaml;user management\NewUser.xaml;
+tasks management\ChangeTask.xaml;tasks management\NewTask.xaml;tasks management\TaskList.xaml;user management\ChangeUser.xaml;MainWindow.xaml;user management\DeleteUser.xaml;user management\NewUser.xaml;
 
 True
 

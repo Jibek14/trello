@@ -30,10 +30,8 @@ namespace TrelloA.tasks_management
                 SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                    // int id = reader.GetInt32(0);
                     int id = reader.GetInt32(0);
                     userId.Add(id);
-                  
                     if (Convert.ToInt32(creatorIdTB.Text) == reader.GetInt32(0))
                     {
                         userInDB = true; 
@@ -66,10 +64,6 @@ namespace TrelloA.tasks_management
             {
                 userStatus = 1;
             }
-          
-            // Table<Task> tasks = db.GetTable<Task>();
-           // bool check = DateTime.TryParse( ,out result);
-          //  MessageBox.Show(check.ToString());
             if (userInDB)
             {  DataContext db = new DataContext(connectionString);
                 Task userTask = new Task
@@ -78,13 +72,8 @@ namespace TrelloA.tasks_management
                     Description = descriptionTB.Text,
                     MarkerId = userMarker,
                     StatusId = userStatus,
-                 //   CreateTime =result,
                     CreatorUserId = Convert.ToInt32(creatorIdTB.Text),
-               //     UserDeletedTime=result,
-                  //  UserId=default,
-                  //  UserInsertedTime=result
-                };
-              
+                };             
                 db.GetTable<Task>().InsertOnSubmit(userTask);
                 db.SubmitChanges();
                 MessageBox.Show("данные сохранены");

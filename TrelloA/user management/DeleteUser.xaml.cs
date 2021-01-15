@@ -47,7 +47,6 @@ namespace TrelloA.user_management
                 gridPosts.CanUserAddRows = false;
             }
         }
-
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             DataRowView row = (DataRowView)gridPosts.SelectedItem;
@@ -66,8 +65,7 @@ namespace TrelloA.user_management
                     Exception error = new Exception("что-то пошло не так...Данные не удалились!", ex);
                     throw error;
                 }
-            }
-                          
+            }        
         }
         private void MainConnection(string sqlQuery, string tableName)
         {

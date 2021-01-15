@@ -51,10 +51,9 @@
             <Label Grid.Row="3" Grid.Column="1">выполнено</Label>
             <RadioButton x:Name="notDone" GroupName="statusRB" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center"></RadioButton>
             <RadioButton x:Name="done" GroupName="statusRB" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center"></RadioButton>
-                  <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" Background="White">Введите Ваш идентификационный номер,чтобы задача закрепилась за Вами</Label>
-        <TextBox x:Name="creatorIdTB" Grid.Row="4" Grid.Column="4" Background="Honeydew"></TextBox>
+            <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" Background="White">Введите Ваш идентификационный номер,чтобы задача закрепилась за Вами</Label>
+            <TextBox x:Name="creatorIdTB" Grid.Row="4" Grid.Column="4" Background="Honeydew"></TextBox>
         </Grid>
-  
         <Button Height="25" Background="Cornsilk" Click="CreateTask_Click">создать</Button>
     </StackPanel>
 </Window>

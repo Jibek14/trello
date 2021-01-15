@@ -4,17 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using TrelloA.tasks_management;
 using TrelloA.user_management;
 
@@ -25,7 +15,7 @@ namespace TrelloA
     /// </summary>
     public partial class MainWindow : Window
     {
-        string connectionString;
+        readonly string connectionString;
         public MainWindow()
         {
             InitializeComponent();
@@ -68,11 +58,21 @@ namespace TrelloA
            NewTask newTask = new NewTask();
             newTask.Show();
         }
-
         private void GetTasksList_Click(object sender, RoutedEventArgs e)
         {
             UsersList usersList = new UsersList();
             usersList.Show();
+        }
+
+        private void ChangeTask_Click(object sender, RoutedEventArgs e)
+        {
+            ChangeTask changeTask = new ChangeTask();
+            changeTask.Show();
+        }
+
+        private void GetMarkersListOfTask_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

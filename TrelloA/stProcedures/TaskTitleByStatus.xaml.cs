@@ -17,36 +17,46 @@ using System.Windows.Shapes;
 namespace TrelloA.stProcedures
 {
     /// <summary>
-    /// Логика взаимодействия для MarkersById.xaml
+    /// Логика взаимодействия для TaskTitleByStatus.xaml
     /// </summary>
-    public partial class MarkersById : Window
-    { string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-        public MarkersById()
+    public partial class TaskTitleByStatus : Window
+    {
+        string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        public TaskTitleByStatus()
         {
             InitializeComponent();
         }
-        private void GetMarkersListOfTaskById_Click(object sender, RoutedEventArgs e)
+
+        private void GetTaskTitleByStatus_Click(object sender, RoutedEventArgs e)
         {
-            string sqlExpression = "sp_GetMarkersById";
+            string sqlExpression = "sp_GetTasksByStatus";
             using (SqlConnection connection = new SqlConnection(connectionString))
-            {
+            { int statusId;
+                if (notDone.IsChecked == true)
+                {
+                    statusId = 2;
+                }
+                else
+                {
+                    statusId = 1;
+                }
                 connection.Open();
                 SqlCommand command = new SqlCommand(sqlExpression, connection);
                 command.CommandType = System.Data.CommandType.StoredProcedure;
                 SqlParameter idTaskParam = new SqlParameter
                 {
-                    ParameterName = "@taskId",
-                    Value = taskId.Text
+                    ParameterName = "@statusId",
+                    Value = statusId
                 };
                 command.Parameters.Add(idTaskParam);
                 command.ExecuteNonQuery();
                 var reader = command.ExecuteReader();
                 if (reader.HasRows)
                 {
-                    markersListTB.Text = reader.GetName(0);
+                    taskByStatusTB.Text = reader.GetName(0);
                     while (reader.Read())
                     {
-                        markersListTB.Text += $"\n\t{reader.GetString(0)}\n";
+                        taskByStatusTB.Text += $"\n\t{reader.GetString(0)}\n";
                     }
                 }
             }

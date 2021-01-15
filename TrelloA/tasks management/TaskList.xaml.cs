@@ -24,30 +24,15 @@ namespace TrelloA.tasks_management
     string    connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
          DataContext db = new DataContext(connectionString);
             Table<Task> tasks = db.GetTable<Task>();
-            string marker;string status="не выполнено";
+            string status="не выполнено";
             foreach(var task in tasks)
             {
-                //switch (task.MarkerId)
-                //{
-                //    case 1:
-                //        marker = "marker 1";
-                //            break;
-                //    case 2:
-                //        marker = "marker 2";
-                //        break;
-                //    case 3:
-                //        marker = "marker 3";
-                //        break;
-                //    default:
-                //         marker = "marker 4";
-                //        break;
-                //}
-                //switch (task.StatusId)
-                //{
-                //    case 2:
-                //        status = "выполнено";
-                //        break;
-                //}
+                switch (task.StatusId)
+                {
+                    case 2:
+                        status = "выполнено";
+                        break;
+                }
                 usersListTB.Text += $"\n\t№:{task.Id}\nназвание:{task.Title}\nописание:{task.Description}\nстатус: {status}\nавтор задачи(id):{task.CreatorUserId}";
             }
         }

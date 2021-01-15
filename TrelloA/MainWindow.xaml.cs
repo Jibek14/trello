@@ -77,5 +77,11 @@ namespace TrelloA
             MarkersById markersById = new MarkersById();
             markersById.Show();
         }
+
+        private void TaskTitleByStatus_Click(object sender, RoutedEventArgs e)
+        {
+            TaskTitleByStatus taskTitleByStatus = new TaskTitleByStatus();
+            taskTitleByStatus.Show();
+        }
     }
 }

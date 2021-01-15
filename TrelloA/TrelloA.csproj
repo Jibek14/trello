@@ -63,6 +63,9 @@
     <Compile Include="stProcedures\MarkersById.xaml.cs">
       <DependentUpon>MarkersById.xaml</DependentUpon>
     </Compile>
+    <Compile Include="stProcedures\TaskTitleByStatus.xaml.cs">
+      <DependentUpon>TaskTitleByStatus.xaml</DependentUpon>
+    </Compile>
     <Compile Include="tasks management\ChangeTask.xaml.cs">
       <DependentUpon>ChangeTask.xaml</DependentUpon>
     </Compile>
@@ -83,6 +86,10 @@
       <DependentUpon>NewUser.xaml</DependentUpon>
     </Compile>
     <Page Include="stProcedures\MarkersById.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="stProcedures\TaskTitleByStatus.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

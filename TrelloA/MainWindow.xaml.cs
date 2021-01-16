@@ -83,5 +83,11 @@ namespace TrelloA
             TaskTitleByStatus taskTitleByStatus = new TaskTitleByStatus();
             taskTitleByStatus.Show();
         }
+
+        private void AddUserToTask_Click(object sender, RoutedEventArgs e)
+        {
+            AddUser addUser = new AddUser();
+            addUser.Show();
+        }
     }
 }

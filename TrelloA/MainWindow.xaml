@@ -27,18 +27,17 @@
                 </StackPanel> 
             </Expander>
             <Expander Grid.Column="1" Grid.Row="0" Header="управление задачами(маркерами)">
-                <StackPanel Width="180" Margin="-40,0,0,0">
+                <StackPanel Width="190" Margin="-40,0,0,0">
                     <Button Foreground="White" FontWeight="Bold" FontSize="15" Height="25" Background="LightSeaGreen" Click="CreateTask_Click">создать</Button>
                     <Button  Foreground="White" FontWeight="Bold" FontSize="15" Height="25" Background="LightSeaGreen" Click="ChangeTask_Click">изменить</Button>
                     <Button Foreground="White" FontWeight="Bold" FontSize="15" Height="25" Background="LightSeaGreen" Click="GetTasksList_Click">вывести</Button>
+                    <Button Click="AddUserToTask_Click" Foreground="White" FontWeight="DemiBold" FontSize="12" Height="25" Background="LightSeaGreen">добавить/удалить пользователя</Button>
                 </StackPanel>
             </Expander>
             <Expander Margin="-30,0,0,0" Grid.Column="2" Grid.Row="0" Header="быстрый просмотр">
                 <StackPanel Width="240" Margin="-20,0,0,0">
-                    <Button Background="LightSeaGreen" Foreground="White" FontWeight="Bold" FontSize="13" Click="GetMarkersListOfTask_Click">получение списка маркеров задачи</Button>
-                    <Button Click="TaskTitleByStatus_Click">получение списка задач заданного статуса</Button>
-                    <Button>
-                        <TextBlock>получение истории изменения<LineBreak/>исполнителей по задачи</TextBlock> </Button>
+                    <Button Background="LightSeaGreen" Foreground="White" FontWeight="Bold" FontSize="11" Click="GetMarkersListOfTask_Click">получение списка маркеров/истории</Button>
+                    <Button Background="LightSeaGreen" Foreground="White" FontWeight="Bold" FontSize="11" Click="TaskTitleByStatus_Click">получение списка задач заданного статуса</Button>
                     <Button>
                         <TextBlock>получение списка задач<LineBreak/> выполненных пользователем</TextBlock> </Button>
                     <Button>

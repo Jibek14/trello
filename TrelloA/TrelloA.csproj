@@ -66,6 +66,9 @@
     <Compile Include="stProcedures\TaskTitleByStatus.xaml.cs">
       <DependentUpon>TaskTitleByStatus.xaml</DependentUpon>
     </Compile>
+    <Compile Include="tasks management\AddUser.xaml.cs">
+      <DependentUpon>AddUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="tasks management\ChangeTask.xaml.cs">
       <DependentUpon>ChangeTask.xaml</DependentUpon>
     </Compile>
@@ -90,6 +93,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="stProcedures\TaskTitleByStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="tasks management\AddUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

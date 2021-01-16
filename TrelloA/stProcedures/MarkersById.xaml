@@ -9,7 +9,8 @@
     <StackPanel>
         <Label>введите id задачи</Label>
         <TextBox x:Name="taskId"></TextBox>
-        <Button Click="GetMarkersListOfTaskById_Click">вывести</Button>
+        <Button Click="GetMarkersListOfTaskById_Click">вывести маркеры</Button>
+        <Button Click="GetUsersHistory_Click">вывести историю изменения пользователей</Button>
         <TextBlock Width="600" Height="350" x:Name="markersListTB"></TextBlock>
     </StackPanel>
 </Window>

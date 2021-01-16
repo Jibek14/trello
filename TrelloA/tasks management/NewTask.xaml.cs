@@ -9,9 +9,6 @@ using System.Data.SqlClient;
 
 namespace TrelloA.tasks_management
 {
-    /// <summary>
-    /// Логика взаимодействия для NewTask.xaml
-    /// </summary>
     public partial class NewTask : Window
     {
         string connectionString=ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
@@ -30,7 +27,7 @@ namespace TrelloA.tasks_management
             }
         }
         private void CreateTask_Click(object sender, RoutedEventArgs e)
-        {int taskId=0;
+        {
             bool userInDB = false;
             List<int> userId = new List<int>();
             string sqlExpression = "Select * FROM [User]";
@@ -69,7 +66,7 @@ namespace TrelloA.tasks_management
                 };     
                 db.GetTable<Task>().InsertOnSubmit(userTask);
                 db.SubmitChanges();
-                taskId = userTask.Id;
+                int taskId = userTask.Id;
                 MessageBox.Show($"данные сохранены\nномер задачи{taskId}");
                 if (red.IsChecked == true)
                 {

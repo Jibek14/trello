@@ -51,5 +51,31 @@ namespace TrelloA.stProcedures
                 }
             }
         }
+
+        private void GetUsersHistory_Click(object sender, RoutedEventArgs e)
+        {
+            string sqlExpression = "sp_ShowHistory";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(sqlExpression, connection);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                SqlParameter idTaskParam = new SqlParameter
+                {
+                    ParameterName = "@taskId",
+                    Value = taskId.Text
+                };
+                command.Parameters.Add(idTaskParam);
+                command.ExecuteNonQuery();
+                var reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        markersListTB.Text += $"\nпользователь {reader.GetInt32(1)}|был {reader.GetString(3)}|в {reader.GetDateTime(4)}";
+                    }
+                }
+            }
+        }
     }
 }
